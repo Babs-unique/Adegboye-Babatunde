@@ -74,7 +74,7 @@ export const Testimonials = () => {
           <div className="relative">
             {/* Main Testimonial */}
             <div className="glass p-8 rounded-3xl md:p-12 glow-border animate-fade-in animation-delay-200">
-              <div className="absolute -top-4 left-8 w-12 h-12 rounded-full bg-primary flex items-center justify-center">
+              <div className="absolute -top-4 left-8 w-12 h-12 rounded-full bg-primary flex items-center justify-center" aria-hidden="true">
                 <Quote className="w-6 h-6 text-primary-foreground" />
               </div>
 
@@ -82,51 +82,57 @@ export const Testimonials = () => {
                 "{testimonials[activeIdx].quote}"
               </blockquote>
 
-              <div className="flex items-center gap-4">
+              <figure className="flex items-center gap-4">
                 <img
                   src={testimonials[activeIdx].avatar}
-                  alt={testimonials[activeIdx].author}
-                  loading = "lazy"
+                  alt={`${testimonials[activeIdx].author} from ${testimonials[activeIdx].role}`}
+                  loading="lazy"
                   className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
                 />
-                <div>
+                <figcaption>
                   <div className="font-semibold">
                     {testimonials[activeIdx].author}
                   </div>
                   <div className="text-sm text-muted-foreground">
                     {testimonials[activeIdx].role}
                   </div>
-                </div>
-              </div>
+                </figcaption>
+              </figure>
             </div>
 
             {/* Testimonials Navigation */}
-            <div className="flex items-center justify-center gap-4 mt-8">
+            <div className="flex items-center justify-center gap-4 mt-8" aria-label="Testimonial navigation">
               <button
                 className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
                 onClick={previous}
+                aria-label="Previous testimonial"
               >
-                <ChevronLeft />
+                <ChevronLeft aria-hidden="true" />
               </button>
 
-              <div className="flex gap-2">
+              <div className="flex gap-2" role="tablist">
                 {testimonials.map((_, idx) => (
                   <button
+                    key={idx}
                     onClick={() => setActiveIdx(idx)}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${
                       idx === activeIdx
                         ? "w-8 bg-primary"
                         : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                     }`}
+                    role="tab"
+                    aria-selected={idx === activeIdx}
+                    aria-label={`Testimonial ${idx + 1}`}
                   />
                 ))}
               </div>
 
               <button
-                onClick={next}
                 className="p-3 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
+                onClick={next}
+                aria-label="Next testimonial"
               >
-                <ChevronRight />
+                <ChevronRight aria-hidden="true" />
               </button>
             </div>
           </div>

@@ -22,7 +22,7 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
-            <a href="#" className="text-xl font-bold tracking-tight">
+            <a href="#" className="text-xl font-bold tracking-tight" aria-label="Babatunde Adegboye - Home">
               BA<span className="text-primary">.</span>
             </a>
             <p className="text-sm text-muted-foreground mt-2">
@@ -32,29 +32,35 @@ export const Footer = () => {
 
           {/* Links */}
           <nav className="flex flex-wrap justify-center gap-6">
-            {footerLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
+            <ul className="flex flex-wrap justify-center gap-6">
+              {footerLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </nav>
 
           {/* Social Links */}
           <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.href}
-                aria-label={social.label}
-                className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
-              >
-                <social.icon className="w-5 h-5" />
-              </a>
-            ))}
+            <ul className="flex items-center gap-4" role="list" aria-label="Follow me on social media">
+              {socialLinks.map((social) => (
+                <li key={social.label}>
+                  <a
+                    href={social.href}
+                    aria-label={`Follow Babatunde on ${social.label}`}
+                    className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
+                  >
+                    <social.icon className="w-5 h-5" aria-hidden="true" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

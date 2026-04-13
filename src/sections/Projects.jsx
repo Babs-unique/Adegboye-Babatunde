@@ -68,7 +68,7 @@ export const Projects = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
-            <div
+            <article
               key={idx}
               className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1"
               style={{ animationDelay: `${(idx + 1) * 100}ms` }}
@@ -77,9 +77,9 @@ export const Projects = () => {
               <div className="relative overflow-hidden aspect-video">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`${project.title} - ${project.description}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
+                  loading="lazy"
                 />
                 <div
                   className="absolute inset-0 
@@ -90,15 +90,17 @@ export const Projects = () => {
                 <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={project.link}
+                    aria-label={`Visit ${project.title}`}
                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                   >
-                    <ArrowUpRight className="w-5 h-5" />
+                    <ArrowUpRight className="w-5 h-5" aria-hidden="true" />
                   </a>
                   <a
                     href={project.github}
+                    aria-label={`View ${project.title} GitHub repository`}
                     className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
                   >
-                    <Github className="w-5 h-5" />
+                    <Github className="w-5 h-5" aria-hidden="true" />
                   </a>
                 </div>
               </div>
@@ -114,6 +116,7 @@ export const Projects = () => {
                   text-muted-foreground group-hover:text-primary
                    group-hover:translate-x-1 
                    group-hover:-translate-y-1 transition-all"
+                    aria-hidden="true"
                   />
                 </div>
                 <p className="text-muted-foreground text-sm">
@@ -130,7 +133,7 @@ export const Projects = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 

@@ -130,6 +130,7 @@ export const Contact = () => {
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
                   }
+                  aria-label="Your full name"
                   className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 />
               </div>
@@ -137,18 +138,20 @@ export const Contact = () => {
               <div>
                 <label
                   htmlFor="email"
-                  type="email"
                   className="block text-sm font-medium mb-2"
                 >
                   Email
                 </label>
                 <input
+                  id="email"
+                  type="email"
                   required
                   placeholder="your@email.com"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData({ ...formData, email: e.target.value })
                   }
+                  aria-label="Your email address"
                   className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                 />
               </div>
@@ -161,6 +164,7 @@ export const Contact = () => {
                   Message
                 </label>
                 <textarea
+                  id="message"
                   rows={5}
                   required
                   value={formData.message}
@@ -168,6 +172,7 @@ export const Contact = () => {
                     setFormData({ ...formData, message: e.target.value })
                   }
                   placeholder="Your message..."
+                  aria-label="Your message"
                   className="w-full px-4 py-3 bg-surface rounded-xl border border-border focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none"
                 />
               </div>
@@ -183,7 +188,7 @@ export const Contact = () => {
                 ) : (
                   <>
                     Send Message
-                    <Send className="w-5 h-5" />
+                    <Send className="w-5 h-5" aria-hidden="true" />
                   </>
                 )}
               </Button>
@@ -196,11 +201,12 @@ export const Contact = () => {
                          ? "bg-green-500/10 border border-green-500/20 text-green-400"
                          : "bg-red-500/10 border border-red-500/20 text-red-400"
                      }`}
+                  role="alert"
                 >
                   {submitStatus.type === "success" ? (
-                    <CheckCircle className="w-5 h-5 flex-shrink-0" />
+                    <CheckCircle className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                   ) : (
-                    <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                    <AlertCircle className="w-5 h-5 flex-shrink-0" aria-hidden="true" />
                   )}
                   <p className="text-sm">{submitStatus.message}</p>
                 </div>
@@ -209,7 +215,7 @@ export const Contact = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-6 animate-fade-in animation-delay-400">
+          <address className="space-y-6 animate-fade-in animation-delay-400 not-italic">
             <div className="glass rounded-3xl p-8">
               <h3 className="text-xl font-semibold mb-6">
                 Contact Information
@@ -220,9 +226,10 @@ export const Contact = () => {
                     key={i}
                     href={item.href}
                     className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
+                    aria-label={item.label}
                   >
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                      <item.icon className="w-5 h-5 text-primary" />
+                      <item.icon className="w-5 h-5 text-primary" aria-hidden="true" />
                     </div>
                     <div>
                       <div className="text-sm text-muted-foreground">
@@ -238,16 +245,16 @@ export const Contact = () => {
             {/* Availability Card */}
             <div className="glass rounded-3xl p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
-                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
+                <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" aria-hidden="true" />
                 <span className="font-medium">Currently Available</span>
               </div>
               <p className="text-muted-foreground text-sm">
                 I'm currently open to new opportunities and exciting projects.
-                Whether you need a full-time engineer or a freelance,
+                Whether you need a full-time engineer or a freelance contract,
                 let's talk!
               </p>
             </div>
-          </div>
+          </address>
         </div>
       </div>
     </section>

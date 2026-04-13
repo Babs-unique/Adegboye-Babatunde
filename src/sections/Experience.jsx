@@ -73,13 +73,13 @@ export const Experience = () => {
           {/* Experience Items */}
           <div className="space-y-12">
             {experiences.map((exp, idx) => (
-              <div
+              <article
                 key={idx}
                 className="relative grid md:grid-cols-2 gap-8 animate-fade-in"
                 style={{ animationDelay: `${(idx + 1) * 150}ms` }}
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
+                <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10" aria-hidden="true">
                   {exp.current && (
                     <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
                   )}
@@ -96,9 +96,9 @@ export const Experience = () => {
                   <div
                     className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500`}
                   >
-                    <span className="text-sm text-primary font-medium">
+                    <time className="text-sm text-primary font-medium">
                       {exp.period}
-                    </span>
+                    </time>
                     <h3 className="text-xl font-semibold mt-2">{exp.role}</h3>
                     <p className="text-muted-foreground">{exp.company}</p>
                     <p className="text-sm text-muted-foreground mt-4">
@@ -108,11 +108,14 @@ export const Experience = () => {
                       className={`flex flex-wrap gap-2 mt-4 ${
                         idx % 2 === 0 ? "md:justify-end" : ""
                       }`}
+                      role="list"
+                      aria-label="Technologies used"
                     >
                       {exp.technologies.map((tech, techIdx) => (
                         <span
                           key={techIdx}
                           className="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground"
+                          role="listitem"
                         >
                           {tech}
                         </span>
@@ -120,7 +123,7 @@ export const Experience = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

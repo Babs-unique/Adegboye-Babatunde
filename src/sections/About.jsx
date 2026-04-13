@@ -32,7 +32,7 @@ export const About = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column */}
-          <div className="space-y-8">
+          <article className="space-y-8">
             <div className="animate-fade-in">
               <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase">
                 About Me
@@ -52,7 +52,7 @@ export const About = () => {
                 I'm a passionate Junior Fullstack Developer with over 3 years of
                 experience crafting digital products and working with startups. My
                 journey started with a curiosity for how things work on the web,
-                and it has evolved into am expertise and active learning in modern frontend
+                and it has evolved into an expertise and active learning in modern frontend
                 and backend technologies.
               </p>
               <p>
@@ -73,24 +73,24 @@ export const About = () => {
                 "My mission is to build clean, user-centered digital experience that combine thoughtful design with reliable, scalable functionality"
               </p>
             </div>
-          </div>
+          </article>
 
-          {/* Right Column - Hilights */}
+          {/* Right Column - Highlights */}
           <div className="grid sm:grid-cols-2 gap-6">
             {highlights.map((item, idx) => (
-              <div
+              <article
                 key={idx}
                 className="glass p-6 rounded-2xl animate-fade-in"
                 style={{ animationDelay: `${(idx + 1) * 100}ms` }}
               >
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">
-                  <item.icon className="w-6 h-6 text-primary" />
+                  <item.icon className="w-6 h-6 text-primary" aria-hidden="true" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground">
                   {item.description}
                 </p>
-              </div>
+              </article>
             ))}
           </div>
         </div>
