@@ -1,0 +1,19 @@
+# Robots.txt for Babatunde Adegboye Portfolio
+# This file tells search engines how to crawl and index the website
+
+# Allow all crawlers to index the entire site
+User-agent: *
+Allow: /
+
+# Disallow crawling of sensitive directories (if any)
+# Disallow: /admin
+# Disallow: /private
+
+# Specify the sitemap location
+Sitemap: https://babs-unique.github.io/Adegboye-Babatunde/sitemap.xml
+
+# Crawl delay (optional - in seconds)
+# Crawl-delay: 1
+
+# Request-rate (optional - for more specific control)
+# Request-rate: 1/10
