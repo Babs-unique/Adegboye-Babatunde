@@ -38,7 +38,7 @@ export const SEOMeta = ({ page = "DEFAULT", schema = null }) => {
       <meta name="twitter:title" content={config.title} />
       <meta name="twitter:description" content={config.description} />
       <meta name="twitter:image" content={config.ogImage} />
-      <meta name="twitter:creator" content="@DevTunde5v" />
+      <meta name="twitter:creator" content="@TundeBuilds_" />
 
       {/* Additional Meta Tags */}
       <meta name="theme-color" content="#20B2A6" />

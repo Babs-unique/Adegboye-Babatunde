@@ -81,7 +81,7 @@ export const PERSON_SCHEMA = {
   sameAs: [
     "https://github.com/Babs-unique",
     "https://www.linkedin.com/in/babatunde-adegboye/",
-    "https://x.com/DevTunde5v",
+    "https://x.com/TundeBuilds_",
   ],
   worksFor: {
     "@type": "Organization",
