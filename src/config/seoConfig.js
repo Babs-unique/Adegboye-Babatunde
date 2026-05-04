@@ -3,7 +3,7 @@
  * Defines meta tags, Open Graph data, and structured data for all pages
  */
 
-const siteURL = "https://babs-unique.github.io/Adegboye-Babatunde";
+const siteURL = "https://adegboye-babatunde.vercel.app/";
 const siteName = "Babatunde Adegboye - Frontend Developer";
 const authorName = "Babatunde Adegboye";
 const authorImage = `${siteURL}/og-image.png`;

@@ -24,6 +24,7 @@ import quizImg from "./babs-unique.github.io_Quizzical-Project_.png"
 import weatherAppImg from "./localhost_5173_Weather-App.png"
 import worguImg from "./Emma Worgu.jpg"
 import hexSoftwaresImg from "./HexSoftwares.jpg"
+import ticketManagementImg from "./ticket-management.png"
 
 export const techIcons = [
     cssImage,htmlImage,jsImage,nodeImage,expressImg,mongoImg,gitActionsImg,gitImage,githubImg,reactImg,postgresImg,tailwindImg,tsImage,figmaImg,vercelImg,npmImg,viteImg,reduxImg,apiImg
@@ -34,7 +35,8 @@ export const projectImg = [
     animatedImg,
     quizImg,
     sunnySideImg,
-    weatherAppImg
+    weatherAppImg,
+    ticketManagementImg
 ]
 export const avatarImg = [
     worguImg,

@@ -38,6 +38,15 @@ const projects = [
     link: "https://github.io/Babs-unique/sunnyside-agency-landing-page-main",
     github: "https://github.com/Babs-unique/sunnyside-agency-landing-page-main",
   },
+  {
+   title: "Ticket Management WebApp",
+   description: 
+   "A full-stack ticket management web application that allows users to create, track, and manage their support tickets in a simple and intuitive interface. Users can submit issues, update ticket details, and monitor progress in real time, making it easy to stay organized and keep track of ongoing requests. The application focuses on clean UI, responsive design, and efficient client-server communication.",
+   image:projectImg[4],
+   tags: ["React" , "TailwindCSS", "Node.js" , "MongoDB", "RTK Query", "Express", "Git & Github" , "JWT", "Vercel" , "Render"], 
+   link : "https://ticket-management-web-app-bay.vercel.app/",
+   github : "https://github.com/Babs-unique/Ticket-Management-WebApp"
+  }
 ];
 
 export const Projects = () => {
